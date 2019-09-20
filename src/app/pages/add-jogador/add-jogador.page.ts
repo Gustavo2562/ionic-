@@ -14,4 +14,8 @@ export class AddJogadorPage implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(form){
+    
+  }
+
 }
