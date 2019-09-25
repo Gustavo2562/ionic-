@@ -29,4 +29,8 @@ export class JogadorService {
       )
     )
   }
+
+  get(id){
+    return this.fire.collection("jogadores").doc<Jogador>(id).valueChanges();
+  }
 }

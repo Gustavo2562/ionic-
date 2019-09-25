@@ -8,8 +8,15 @@
 </ion-header>
 
 <ion-content>
-  
-  
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
 
   <ion-content>
       <!-- fab placed to the (vertical) center and end -->
@@ -19,8 +26,8 @@
         </ion-fab-button>
       </ion-fab>
 
-<ion-list *ngIf = "jogadores | async as Ip">
-  <ion-item *ngFor= "let j of Ip">
+<ion-list *ngIf = "jogadores">
+  <ion-item *ngFor= "let j of jogadores" routerLink="/tabs/perfilJogador/{{j.key}}">
     <ion-avatar slot="start">
       <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
     </ion-avatar>

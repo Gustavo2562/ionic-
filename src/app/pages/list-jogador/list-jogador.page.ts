@@ -15,7 +15,23 @@ protected jogadores: any;
   ) { }
 
   ngOnInit() {
-    this.jogadores = this.jogadorService.getAll();
+    this.jogadorService.getAll().subscribe(
+    res=>{
+      this.jogadores = res;
+    }
+  )
+}
 
-  }
+  doRefresh(event){
+      console.log('Begin async operation');
+      this.jogadorService.getAll().subscribe(
+       res=> {
+         this.jogadores = res
+        setTimeout(() => {
+          console.log('Async operation has ended');
+          event.target.complete();
+      }, 0);
+    }
+  );
+}
 }

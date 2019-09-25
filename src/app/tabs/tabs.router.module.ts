@@ -28,6 +28,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'perfilJogador/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/perfil-jogador/perfil-jogador.module').then(m => m.PerfilJogadorPageModule)
+          }
+        ]
+      },
+      {
         path: 'tab3',
         children: [
           {
