@@ -33,4 +33,13 @@ export class JogadorService {
   get(id){
     return this.fire.collection("jogadores").doc<Jogador>(id).valueChanges();
   }
+
+update(jogador, id){
+  return this.fire.collection("jogadores").doc<Jogador>(id).update(jogador);
+
+  }
+
+  remove(jogador){
+    return this.fire.collection("jogadores").doc(jogador.key).delete();
+  }
 }

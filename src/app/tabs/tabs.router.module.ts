@@ -69,6 +69,18 @@ const routes: Routes = [
           }
         ]
       },
+      
+      {
+        path: 'addjogador/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/add-jogador/add-jogador.module').then(m => m.AddJogadorPageModule)
+              //loadChildren: '.../pages/add-jogador/add-jogador.module#AddJogadorPageModule'
+          }
+        ]
+      },
+
 
       {
         path: 'addgame',
