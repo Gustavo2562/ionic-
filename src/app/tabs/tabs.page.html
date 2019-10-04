@@ -8,8 +8,8 @@
 
     <ion-tab-button tab="listJogador">
       <ion-icon name="logo-game-controller-b"></ion-icon>
-      
-      <ion-label>jogador</ion-label><ion-badge color="danger">66</ion-badge>
+      <ion-badge color="danger" *ngIf="quantJogador">{{quantJogador}}</ion-badge>
+      <ion-label>Jogadores</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="listGame">

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JogadorService } from '../services/jogador.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  protected quantJogador:number = 0;
+  constructor(
+    protected jogadorService: JogadorService,
+  ) {
+    this.jogadorService.getAll().subscribe(
+      res=>{
+        this.quantJogador = res.length
+      }
+    )
+
+  }
 
 }

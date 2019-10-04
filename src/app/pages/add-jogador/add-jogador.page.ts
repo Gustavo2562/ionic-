@@ -6,6 +6,7 @@ import { LoadingController } from '@ionic/angular';
 import { Route } from '@angular/compiler/src/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
     
 
@@ -22,6 +23,7 @@ export class AddJogadorPage implements OnInit {
   protected jogador: Jogador = new Jogador; //modificador de visibilidade "protected" e "private"
   protected id:any = null;
   protected preview: any = null;
+
   constructor(
     protected jogadorService:JogadorService,
     protected alertController: AlertController,
@@ -29,7 +31,8 @@ export class AddJogadorPage implements OnInit {
     public loadingController: LoadingController,
     private navCtrl: NavController, private loadingCtrl: LoadingController,
     protected router:Router,
-    private camera: Camera
+    private camera: Camera,
+    protected geolocation: Geolocation
   ) { }
 
   ngOnInit() {
@@ -46,11 +49,18 @@ export class AddJogadorPage implements OnInit {
   onsubmit(form){
     if (!this.preview){
       this.presentAlert("Erro", "Deve inserir a foto do usuário");
-    } else
-    if(!this.id) {
+    } else{
       this.jogador.foto = this.preview;
+
+      this.geolocation.getCurrentPosition().then((resp) => {
+        this.jogador.lat = resp.coords.latitude
+        this.jogador.lng = resp.coords.longitude
+       }).catch((error) => {
+         console.log('Error getting location', error);
+       });
+    if(!this.id) {
       this.jogadorService.save(this.jogador).then(
-        res=>{
+        res =>{
           form.reset();
           this.jogador= new Jogador;
           //console.log("Cadastrado");
@@ -61,6 +71,7 @@ export class AddJogadorPage implements OnInit {
         erro=>{
           console.log("Erro: " + erro);
           this.presentAlert("Erro", "Não foi possível fazer o cadastro")
+
         }
       )
     } else{
@@ -75,11 +86,12 @@ export class AddJogadorPage implements OnInit {
           console.log("Erro: " + erro);
           this.presentAlert("Erro", "Não foi possível atualizar!")
   
-          
+        
         }
       )
     }
   }
+}
 
   tirarFoto() {
     const options: CameraOptions = {

@@ -60,22 +60,22 @@ const routes: Routes = [
       },
 
       {
-        path: 'addjogador',
+        path: 'addJogador',
         children: [
           {
             path: '',
-            loadChildren: () => import('../pages/add-jogador/add-jogador.module').then(m => m.AddJogadorPageModule)
+            loadChildren: () => import('../pages/add-Jogador/add-Jogador.module').then(m => m.AddJogadorPageModule)
               //loadChildren: '.../pages/add-jogador/add-jogador.module#AddJogadorPageModule'
           }
         ]
       },
       
       {
-        path: 'addjogador/:id',
+        path: 'addJogador/:id',
         children: [
           {
             path: '',
-            loadChildren: () => import('../pages/add-jogador/add-jogador.module').then(m => m.AddJogadorPageModule)
+            loadChildren: () => import('../pages/add-Jogador/add-Jogador.module').then(m => m.AddJogadorPageModule)
               //loadChildren: '.../pages/add-jogador/add-jogador.module#AddJogadorPageModule'
           }
         ]
