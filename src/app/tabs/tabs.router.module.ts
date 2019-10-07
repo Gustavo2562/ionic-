@@ -94,6 +94,17 @@ const routes: Routes = [
       },
 
       {
+        path: 'addLogin',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/add-Login/add-Login.module').then(m => m.AddLoginPageModule)
+              //loadChildren: '.../pages/add-jogador/add-jogador.module#AddJogadorPageModule'
+          }
+        ]
+      },
+
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

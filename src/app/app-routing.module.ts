@@ -8,6 +8,8 @@ const routes: Routes = [
   },
   { path: 'list-jogador', loadChildren: './pages/list-jogador/list-jogador.module#ListJogadorPageModule' },
   { path: 'perfil-jogador', loadChildren: './pages/perfil-jogador/perfil-jogador.module#PerfilJogadorPageModule' },
+  // { path: 'pages', loadChildren: './add-login/pages/pages.module#PagesPageModule' },
+  // { path: 'add-login', loadChildren: './pages/add-login/add-login.module#AddLoginPageModule' },
   // { path: 'perfil-game', loadChildren: './perfil-game/perfil-game.module#PerfilGamePageModule' },
   //{ path: 'pages', loadChildren: './perfil-game/pages/pages.module#PagesPageModule' },
   //{ path: 'perfil-game', loadChildren: './pages/perfil-game/perfil-game.module#PerfilGamePageModule' },
