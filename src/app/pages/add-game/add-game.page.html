@@ -19,10 +19,13 @@
       </ion-item>
 
       <ion-item>
-          <ion-label position="floating">Console</ion-label>
-         <ion-input type="text" [(ngModel)] = "game.console" name="console" required ></ion-input> 
-
-      </ion-item>
+            <ion-label>Console</ion-label>
+            <ion-select placeholder="Selecione um console">
+              <ion-select-option value="X-box">X-box</ion-select-option>
+              <ion-select-option value="Playstation">Playstation</ion-select-option>
+            </ion-select>
+          </ion-item>
+        
 
       <ion-item>
           <ion-label position="floating">Descricao</ion-label>
