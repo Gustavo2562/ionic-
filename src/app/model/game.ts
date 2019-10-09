@@ -6,6 +6,6 @@ export class Game {
     descricao: string;
     quant: number;
     valor: number;
-    foto: string = null;
+    foto: string[] = [];
     ativo: boolean = true;
 }

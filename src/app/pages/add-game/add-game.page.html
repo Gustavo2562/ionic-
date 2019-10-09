@@ -44,6 +44,11 @@
           <!-- Verificar o "fc.invalid" se o F ta minusculo caso n esteja vai dar erro // e o "ngif" o I é maiusculo "ngIf"-->
           <ion-button slot="end" type="reset" color="dark">cancelar</ion-button>
       </ion-item>
+
+      <ion-item lines="none" *ngIf="id">
+        <ion-button type="submit" color="primary" [disabled]="fc.invalid">Editar</ion-button>
+        <ion-button type="reset" color="danger">Cancelar</ion-button>
+      </ion-item>
 </form>
 
 

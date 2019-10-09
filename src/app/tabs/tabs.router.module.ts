@@ -47,7 +47,16 @@ const routes: Routes = [
           }
         ]
       },
-
+      {
+        path: 'listGame/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/list-game/list-game.module').then(m => m.ListGamePageModule)
+          }
+        ]
+      },
       {
         path: 'perfilGame/:id',
         children: [
@@ -83,7 +92,17 @@ const routes: Routes = [
 
 
       {
-        path: 'addgame',
+        path: 'addGame',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/add-game/add-game.module').then(m => m.AddGamePageModule)
+              //loadChildren: '.../pages/add-jogador/add-jogador.module#AddJogadorPageModule'
+          }
+        ]
+      },
+      {
+        path: 'addGame/:id',
         children: [
           {
             path: '',
