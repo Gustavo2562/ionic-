@@ -19,5 +19,8 @@ export class TabsPage {
     )
 
   }
-
 }
+
+
+
+

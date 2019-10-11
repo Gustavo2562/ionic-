@@ -11,7 +11,7 @@
     <form #fc="ngForm" (ngSubmit)="onsubmit(fc)">
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
-      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+      <ion-input type="email" [(ngModel)]="email" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -26,4 +26,17 @@
       </ion-item>  
   </form>
 
+  <ion-content>
+
+    <ion-button expand="block" fill="outline" color="medium" (click)="loginGoogle()">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+       Entrar com Google
+    </ion-button>
+  
+    <ion-button expand="block" fill="outline" color="medium" (click)="logout()" href="/tabs">
+      <ion-icon name="log-out"></ion-icon>
+       Sair do usuário
+    </ion-button>
+    
+  </ion-content>
 </ion-content>

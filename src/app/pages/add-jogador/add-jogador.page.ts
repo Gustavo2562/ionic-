@@ -68,7 +68,7 @@ export class AddJogadorPage implements OnInit {
           this.jogador= new Jogador;
           //console.log("Cadastrado");
           this.presentAlert("Aviso", "Cadastro")
-          this.router.navigate(['/tabs/listJogador']);
+          this.router.navigate(['/']);
   
         },
         erro=>{

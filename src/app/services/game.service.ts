@@ -19,6 +19,7 @@ export class GameService {
       categoria: game.categoria,
       console: game.console,
       descricao: game.descricao,
+      foto: game.foto,
       quantidade: game.quantidade,
       valor: game.valor
     });
