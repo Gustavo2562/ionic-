@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { Device } from '@ionic-native/device/ngx';
+
 
 //Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -29,7 +32,9 @@ import{AngularFirestoreModule} from '@angular/fire/firestore'
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Geolocation
+    Geolocation,
+    GooglePlus,
+    Device
   ],
   bootstrap: [AppComponent]
 })
