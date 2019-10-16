@@ -19,6 +19,7 @@ import { Device } from '@ionic-native/device/ngx';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import{AngularFirestoreModule} from '@angular/fire/firestore'
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,7 +35,8 @@ import{AngularFirestoreModule} from '@angular/fire/firestore'
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Geolocation,
     GooglePlus,
-    Device
+    Device,
+    AndroidPermissions
   ],
   bootstrap: [AppComponent]
 })
