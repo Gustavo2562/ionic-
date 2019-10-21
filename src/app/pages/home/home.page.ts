@@ -22,7 +22,7 @@ export class HomePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.gameService.getAll().subscribe(
+    this.gameService.gelAll().subscribe(
       res => {
         this.games = res;
       }
